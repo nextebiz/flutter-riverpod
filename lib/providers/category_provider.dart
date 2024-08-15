@@ -2,8 +2,8 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:p13/data/data.dart";
 import "package:p13/models/category.dart";
 
-class CategoryProvider extends StateNotifier<List<Category>> {
-  CategoryProvider() : super(categories);
+class CategoryNotifier extends StateNotifier<List<Category>> {
+  CategoryNotifier() : super(categories);
 
   void toggleCategory(Category category) {
     final categoryExists = state.contains((category));
@@ -35,6 +35,6 @@ class CategoryProvider extends StateNotifier<List<Category>> {
 }
 
 final categoryProvider =
-    StateNotifierProvider<CategoryProvider, List<Category>>((ref) {
-  return CategoryProvider();
+    StateNotifierProvider<CategoryNotifier, List<Category>>((ref) {
+  return CategoryNotifier();
 });
